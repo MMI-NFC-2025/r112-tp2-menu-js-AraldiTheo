@@ -1,0 +1,77 @@
+/* Limite la largeur maximale de l'image à 100% de son conteneur - https://developer.mozilla.org/fr/docs/Web/CSS/max-width */
+/* Ajuste la hauteur de l'image automatiquement pour conserver les proportions - https://developer.mozilla.org/fr/docs/Web/CSS/height */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* évite l'espace blanc sous l'image */
+}
+
+/* Mise en forme du carousel en CSS.
+   Utiliser flex pour positionner les item du carousel les uns à coté des autres.
+   La propriété "overflow-x" avec la valeur "scroll" permet rogner le contenu afin de tenir horizontalement dans la boîte de remplissage et d'ajouter un scroll horizontal si le contenu déborde.
+   https://developer.mozilla.org/fr/docs/Web/CSS/overflow-x
+
+   La propriété "scroll-snap-type" définit la force d'adhérence aux points d'accroche en cas de défilement d'un conteneur
+   https://developer.mozilla.org/fr/docs/Web/CSS/scroll-snap-type
+
+   Les margin négatifs à gauche et à droite corresponde à l'éespace entre le navigateur et le début du contenu, de sorte que le carousel soit collé au bords de l'écran.
+*/
+
+/* Contrôles du carousel (ex. flèches) */
+.carousel__controls {
+  display: flex; /* Utilise flexbox pour aligner les éléments enfants */
+  gap: 16px; /* Espace entre les éléments enfants 16px */
+  align-items: center; /* Aligne les éléments enfants au centre verticalement */
+  justify-content: center; /* Centre les éléments enfants horizontalement */
+  margin: 16px 0; /* Marge de 16px en haut et en bas */
+}
+
+.carousel__button {
+  width: 50px; /* Largeur du bouton 50px */
+  height: 50px; /* Hauteur du bouton 50px */
+  display: flex; /* Utilise flexbox pour aligner le contenu du bouton */
+  align-items: center; /* Aligne le contenu du bouton au centre verticalement */
+  justify-content: center; /* Centre le contenu du bouton horizontalement */
+  border: 1px solid #ccc; /* Bordure solide de 1px */
+  border-radius: 50%; /* Bordure arrondie pour faire un cercle */
+  background: #fff;
+  cursor: pointer;
+}
+.carousel__button:focus {
+  outline: 2px solid #0078d4;
+}
+
+.carousel__button--prev {
+  transform: rotate(180deg); /* Fait pivoter le bouton de 180 degrés */
+}
+
+/* Conteneur principal des items */
+.carousel__container {
+  display: flex; /* Utilise flexbox pour aligner les éléments enfants */
+  gap: 16px; /* Espace entre les éléments enfants 16px */
+  overflow-x: auto; /* Ajoute un défilement horizontal si le contenu déborde */
+  margin-left: -24px; /* Marge négative à gauche pour coller le carousel au bord de l'écran -24px */
+  margin-right: -24px; /* Marge négative à droite pour coller le carousel au bord de l'écran -24px */
+  scroll-snap-type: x mandatory; /* Définit le type de défilement pour accrocher les éléments */
+  -webkit-overflow-scrolling: touch; /* Inertie sur iOS */
+  padding: 8px 24px; /* Rétablit un padding intérieur pour que le contenu ne colle pas au bord */
+}
+
+.carousel__container::-webkit-scrollbar {
+  height: 8px;
+}
+.carousel__container::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
+
+.carousel__item {
+  flex: 1 0 260px; /* L'élément prend 1 part, ne rétrécit pas, largeur de base 260px */
+  scroll-snap-align: center; /* Aligne l'élément au centre lors du défilement */
+}
+
+.carousel__item img {
+  display: block; /* Affiche l'image comme un bloc */
+  width: 100%;
+  height: auto;
+}

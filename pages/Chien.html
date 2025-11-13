@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chien</title>
+  <!-- Déclaration de la feuille de style -->
+  <link rel="stylesheet" href="/src/css/components/menu.css" />
+  <link rel="stylesheet" href="/src/css/components/carousel.css">
+  <script type="module" src="/src/js/script.js"></script>
+</head>
+
+<body>
+   
+  <!-- En-tête de la page -->
+  <header class="header container">
+
+    <div class="header__end">
+
+      <button class="header__menu-btn menu-btn" aria-label="menu" aria-expanded="false" aria-controls="mainNav">
+        🍔
+      </button>
+ <h1>CHIEN</h1>
+      <!-- Menu principal -->
+      <nav class="header__menu menu" id="mainNav" aria-hidden="true">
+        <ul class="menu__list list-unstyled">
+          <li class="menu__item">
+            <a class="menu__link" href="/pages/Chat.html">Chat</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="/pages/Chien.html">Chien</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="/pages/Blobfish.html">Blobfish</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="/pages/Tuyau.html">JONCOUX Tuyau</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- Fin du menu principal -->
+    </div>
+  </header>
+  <!-- Contenu principal de la page -->
+  <main>
+    <div class="carousel" aria-labelledby="carousel-heading">
+    <h2 id="carousel-heading" class="carousel__heading sr-only">
+      Carousel d'images De Chiens
+    </h2>
+    <div class="carousel__container" role="region" aria-live="polite">
+      <div class="carousel__item">
+        <img src="/assets/Chien.webp" alt="Image musique 1" />
+      </div>
+      <div class="carousel__item">
+        <img src="/assets/chien2.webp" alt="Image musique 2" />
+      </div>
+      <div class="carousel__item">
+        <img src="/assets/Chien3.jpg" alt="Image musique 3" />
+      </div>
+      <div class="carousel__item">
+        <img src="/assets/Chien4.jpg" alt="Image musique 4" />
+      </div>
+      <div class="carousel__item">
+        <img src="/assets/Chien5.jpg" alt="Image musique 5" />
+      </div>
+    </div>
+
+  </main>
+  <!-- Fin du contenu principal -->
+
+</body>
+
+</html>
